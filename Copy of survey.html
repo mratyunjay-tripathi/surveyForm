@@ -1,0 +1,664 @@
+<html>
+<head>
+  <title> Two Wheeler Survey</title>
+<style>
+
+.copyright{
+
+  position: fixed;
+  
+  bottom: 10px;
+
+} 
+.asterisk{
+color:#f00;
+font-family:times_new_roman;
+
+}
+
+
+div.survey{
+ background-color: #10addf;
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 50%;
+  padding: 14px 14px 30px 30px;
+  margin-left: 25%;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom:100px;	
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+		
+}
+body {
+  background-color: #f1f1f1;
+  	
+
+}
+
+
+
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+
+p{
+ font-family: times_new_roman;
+  font-size: 15px;
+}
+
+.normaltext{
+  font-family: verdana;
+  font-size: 18px;
+  text-align:left;	
+  color:#fff;	
+}
+
+input[type=text], select {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+ 
+}
+
+input[type=button] {
+  width: 20%;
+  background-color: #e7e7e7;
+  color: white;
+  padding: 10px 16px ;
+  margin: 8px 0;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  color:black;
+}
+
+input[type=button]:hover {
+  background-color: #4f4;
+  color: #fff;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 100%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 0px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+
+</style>
+
+
+
+
+<script type = "text/javascript">
+  // Form validation code will come here.
+
+
+
+
+      function validate() {
+
+        var firstName, lastName, Gender, Age, Email, Country,   Noftw, Type, Brand, 
+
+Factor, Media, Price, Buy;
+
+      
+        if( document.f1.firstname.value == "" ) {
+            alert( "Please provide your First name!" );
+            document.f1.firstname.focus() ;
+            return false;
+         }else{
+firstName=document.f1.firstname.value ;
+}
+
+         if( document.f1.lastname.value == "" ) {
+            alert( "Please provide your Last name!" );
+            document.f1.lastname.focus() ;
+            return false;
+         }else{
+lastName=document.f1.lastname.value ;}
+
+
+
+if(true){
+var radios = document.getElementsByName("gender");
+    var formValid = false;
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    if (!formValid){ alert("Must provide your Gender!");
+	
+    return false;}else{
+	Gender=document.f1.gender.value;
+  
+		}
+		}
+
+
+if( document.f1.age.value == "" || isNaN(document.f1.age.value)) {
+            alert( "Please provide your correct Age!" );
+            document.f1.age.focus() ;
+            return false;
+         }else{
+Age=document.f1.age.value ;}
+
+
+
+if(true){
+ var emailID = document.f1.email.value;
+         var atpos = emailID.indexOf("@");
+         var dotpos = emailID.lastIndexOf(".");
+         
+         if (atpos < 1 || ( dotpos - atpos < 2 ) || emailID == "") {
+            alert("Please enter correct Email ID!")
+            document.f1.email.focus() ;
+            return false;
+         }else{
+	Email=document.f1.email.value;	}
+         }
+
+
+
+if( document.f1.country.value == "-1") {
+            alert( "Please choose your Country!" );
+            document.f1.country.focus() ;
+            return false;
+         }else{
+Country=document.f1.country.value ;
+}
+
+
+
+if(true){
+
+ var radios = document.getElementsByName("noftw");
+    var formValid = false;
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    if (!formValid){ alert("Please provide no. of two wheeler you own!");
+		document.f1.noftw.focus();
+    return false;}else{
+	Noftw=document.f1.noftw.value;
+	
+		}
+		}
+
+
+if(true){
+
+ var radios = document.getElementsByName("type");
+    var formValid = false;
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    if (!formValid){ alert("Please provide type of two wheeler you have!");
+
+    return false;}else{
+	Type=document.f1.type.value;
+		
+		}
+		}
+
+
+if(true){
+
+ var radios = document.getElementsByName("brand");
+    var formValid = false;
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    if (!formValid){ alert("Please provide brand of two wheeler you own!");
+
+    return false;}else{
+	Brand=document.f1.brand.value;
+		
+		}
+		}
+
+
+if(true){
+
+ var radios = document.getElementsByName("factors");
+    var formValid = false;
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    if (!formValid){ alert("Please provide your opinion on important factor!");
+
+    return false;}else{
+	Factor=document.f1.factors.value;
+		
+		}
+		}
+
+
+if(true){
+
+ var radios = document.getElementsByName("media");
+    var formValid = false;
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    if (!formValid){ alert("Please answer how did you come to know about your preferred  brand!");
+
+    return false;}else{
+	Media=document.f1.media.value;
+		
+		}
+		}
+
+
+
+if(true){
+
+ var radios = document.getElementsByName("price");
+    var formValid = false;
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    if (!formValid){ alert("Please provide your preferred price range while buying two wheeler!");
+
+    return false;}else{
+	Price=document.f1.price.value;
+		
+		}
+		}
+
+if(true){
+
+ var radios = document.getElementsByName("buy");
+    var formValid = false;
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    if (!formValid){ alert("Please answer would you switch over to new brand of your two wheeler!");
+
+    return false;}else{
+	Buy=document.f1.buy.value;
+		
+		}
+		}
+
+
+//all collected data is present inside this array now handle it further also check once if this array is correct or not handle from here
+var TwoWheelerSurvey = {firstname, lastName, Gender, Age, Email, Country, Noftw, Type, Brand, Factor, Media, Price, Buy};
+
+    var x,text="";
+    for(x in TwoWheelerSurvey){
+        text += TwoWheelerSurvey[x];
+    }
+    document.getElementById("result").innerHTML=text;
+
+       
+//-->
+      }
+   
+</script>
+
+
+
+
+</head>
+<body>
+
+<div class="survey">
+
+<h1>Consumer Behaviour about Two Wheeler </h1>
+<p >This survey is only for educational purpose intended to collect the 
+
+information of consumer
+behaviour about two wheeler who are in the age group of 18-25.</p><br>
+
+<p class="asterisk">&#42 All fields are mendetory</p><br>
+
+<form name="f1" >
+
+    <label for="fname" class="normaltext" >First Name </label><br>
+    <input type="text" id="fname" name="firstname" placeholder="First 
+
+name.."><br><br>
+
+    <label for="lname" class="normaltext">Last Name</label><br>
+    <input type="text" id="lname" name="lastname" placeholder="Last 
+
+name.."><br><br>
+
+<label for="q1" class="normaltext" id="pergen">Gender </label><br><br>
+<label class="container">Male
+  <input type="radio"  name="gender" value="Male">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Female
+  <input type="radio" value="Female" name="gender">
+  <span class="checkmark"></span>
+</label>
+<br><br>
+
+
+<label for="Age" class="normaltext">Age</label><br>
+    <input type="text" id="Personage" name="age" placeholder="Your age.."><br><br>
+
+<label for="Email" class="normaltext">Email Id</label><br>
+    <input type="text" id="EmailId" name="email" placeholder="e.g. 
+
+abc@example.com.."><br><br>
+
+
+    <label for="country" class="normaltext">Country</label><br>
+<div style="width:200px;">
+    <select id="MyCountry" name="country">
+<option value="-1">Choose </option>      
+<option value="australia">Australia</option>
+      <option value="India (IN)">India (IN)</option>
+      <option value="canada">Canada</option>      
+      <option value="usa">USA</option>
+    </select>
+</div>
+  <br><br>
+
+
+
+
+<label for="q1" class="normaltext" id="noftwo">How many Two wheelers do you 
+
+have?</label><br><br>
+
+<label class="container">One
+  <input type="radio" name="noftw" value="one">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Two
+  <input type="radio" name="noftw" value="Two">
+  <span class="checkmark"></span>
+</label>
+<label class="container">More than Two
+  <input type="radio" name="noftw" value="More than two">
+  <span class="checkmark"></span>
+</label>
+<label class="container">None
+  <input type="radio" name="noftw" value="None">
+  <span class="checkmark"></span>
+</label>
+<br><br>
+
+
+<label for="q1" class="normaltext">Which type of Two wheeler do you have?
+
+</label><br><br>
+
+<label class="container">Motorcycle
+  <input type="radio" name="type" value="Motorcycle">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Scooter
+  <input type="radio" name="type" value="Scooter">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Scooter without gear
+  <input type="radio" name="type" value="Scooter without gear">
+  <span class="checkmark"></span>
+</label>
+<br><br>
+
+
+<label for="q1" class="normaltext">Which brand of two wheeler do you own?
+
+</label><br><br>
+
+<label class="container">Honda
+  <input type="radio" name="brand" value="Honda">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Suzuki
+  <input type="radio" name="brand"  value="Suzuki">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Hero
+  <input type="radio" name="brand" value="Hero">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Tvs
+  <input type="radio" name="brand" value="Tvs">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Bajaj
+  <input type="radio"  name="brand" value="Bajaj">
+  <span class="checkmark"></span>
+</label>
+<label class="container">other
+  <input type="radio"  name="brand" value="Other">
+  <span class="checkmark"></span>
+</label>
+<br><br>
+
+
+<label for="q1" class="normaltext">Which factor do you consider most important 
+
+while buying two wheeler?</label><br><br>
+
+<label class="container">Mileage
+  <input type="radio" name="factors" value="Mileage">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Comfort
+  <input type="radio" name="factors" value="Comfort">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Performance
+  <input type="radio" name="factors"  value="Performance">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Price
+  <input type="radio" name="factors" value="Price">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Style
+  <input type="radio"  name="factors" value="Style">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Brand
+  <input type="radio" name="factors" value="Brand">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Services after sales
+  <input type="radio"name="factors" value="Services after sale">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Availability
+  <input type="radio" name="factors" value="Availability">
+  <span class="checkmark"></span>
+</label>
+<br><br>
+
+
+<label for="q1" class="normaltext">How did you come to know about your preferred 
+
+brand?</label><br><br>
+
+<label class="container">Television
+  <input type="radio" name="media" value="Television">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Newspaper
+  <input type="radio" name="media" value="Newspaper">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Radio
+  <input type="radio" name="media" value="Radio">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Magazines
+  <input type="radio" name="media" value="one"Magazines>
+  <span class="checkmark"></span>
+</label>
+<label class="container">Social Media
+  <input type="radio" name="media" value="Social Media">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Other
+  <input type="radio" name="media" value="Other">
+  <span class="checkmark"></span>
+</label>
+<br><br>
+
+
+<label for="q1" class="normaltext">What is your preferred price range while 
+
+buying a two wheeler? (amount in INR)</label><br><br>
+
+<label class="container"><50,000
+  <input type="radio" name="price" value="50,000">
+  <span class="checkmark"></span>
+</label>
+<label class="container">50,000 - 75,000
+  <input type="radio" name="price" value="50,000 - 75,000">
+  <span class="checkmark"></span>
+</label>
+<label class="container">75,000 - 1,00,000
+  <input type="radio" name="price" value="75,000 - 1,00,000">
+  <span class="checkmark"></span>
+</label>
+<label class="container">>1,00,000
+  <input type="radio" name="price" value="more than 1,00,000">
+  <span class="checkmark"></span>
+</label>
+<br><br>
+
+
+<label for="q1" class="normaltext">Would you switch over to new brand of your two 
+
+wheeler?</label><br><br>
+
+<label class="container">Yes
+  <input type="radio" name="buy" value="Yes">
+  <span class="checkmark"></span>
+</label>
+<label class="container">No
+  <input type="radio" name="buy" value="No">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Maybe
+  <input type="radio" name="buy"  value="Maybe">
+  <span class="checkmark"></span>
+</label>
+<br><br>
+
+
+
+    <input type="button" value="Submit" onClick="validate()">
+
+</form>
+</div>
+<p ><span id="result"></span></p>
+<p class="copyright">&#169 All rights reserved</p>
+
+</body>
+
+
+</htmt>
